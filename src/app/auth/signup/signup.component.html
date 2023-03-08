@@ -12,7 +12,9 @@
             <mat-error>
               Username required
             </mat-error>
+            
           </mat-form-field>
+          {{authForm.get('username')?.errors | json }}
           <!-- Password -->
           <div>
             <mat-form-field style="width: 100%">
@@ -42,6 +44,8 @@
           <!-- Signup Button -->
           <button mat-raised-button color="primary" type="submit">Register
           </button>
+
+          {{ authForm.errors | json}}
         </div>
       </form>
     </mat-card>
