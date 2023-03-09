@@ -1,21 +1,29 @@
 <div class="page">
-    <mat-card class="signup-form-container-card">
-      <form [formGroup]="authForm">
-        Already registered? <a routerLink="/signin">Sign-in here</a>
-        <div class="container">
-          <!-- Username -->
-          <app-input inputType="text" label="Username" [control]="authForm.get('username')"></app-input>
-          <!-- Password -->
-          <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
-          <!-- Confirm Password -->
-          <app-input inputType="password" label="Confirm Password" [control]="authForm.get('passwordConfirmation')"></app-input>
-          
-          <!-- Signup Button -->
-          <button mat-raised-button color="primary" type="submit">Register
-          </button>
+  <mat-card class="signup-form-container-card">
+    <form [formGroup]="authForm">
+      Already registered? <a routerLink="/signin">Sign-in here</a>
+      <div class="container">
+        <!-- Username -->
+        <app-input inputType="text" label="Username" [control]="authForm.get('username')"></app-input>
+        <!-- Password -->
+        <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
+        <!-- Confirm Password -->
+        <app-input inputType="password" label="Confirm Password"
+          [control]="authForm.get('passwordConfirmation')"></app-input>
 
-          {{ authForm.errors | json}}
+        <!-- Signup Button -->
+        <button mat-raised-button color="primary" type="submit">Register
+        </button>
+
+        <div *ngIf="
+            authForm.get('password')?.touched && 
+            authForm.get('passwordConfirmation')?.touched && 
+            authForm.errors">
+          <mat-error *ngIf="authForm?.errors?.['passwordsDontMatch']">
+            Passwords don't match
+          </mat-error>
         </div>
-      </form>
-    </mat-card>
-  </div>
+      </div>
+    </form>
+  </mat-card>
+</div>
