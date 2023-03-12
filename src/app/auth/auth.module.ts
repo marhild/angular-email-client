@@ -13,12 +13,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignoutComponent } from './signout/signout.component';
 
 
 @NgModule({
   declarations: [
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    SignoutComponent
   ],
   imports: [
     CommonModule,

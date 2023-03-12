@@ -63,4 +63,14 @@ export class AuthService {
       );
   }
 
+  signout() {
+    return this.http.post<any>(`${this.rootUrl}/auth/signout`, {})
+    .pipe(
+      tap(() => {
+        // signed out 
+        this.signedin$.next(false);
+      })
+    )
+  }
+
 }
