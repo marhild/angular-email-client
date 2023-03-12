@@ -3,12 +3,12 @@
         Email Client
     </a>
     <span class="fill-remaining-space"></span>
-    <div *ngIf="signedin">
+    <div *ngIf="signedin$ | async">
         <button mat-button><a routerLink="/inbox">Inbox</a></button>
         <button mat-button><a routerLink="/signout">SignOut</a></button>
     </div>
-    <div *ngIf="!signedin">
-        <button mat-button><a routerLink="/">SignIn</a></button>
+    <div *ngIf="!(signedin$ | async)">
+        <button mat-button><a routerLink="/" routerLinkActiveOptions="{exact: true}">SignIn</a></button>
         <button mat-button><a routerLink="/signup">SignUp</a></button>
     </div>
 </mat-toolbar>

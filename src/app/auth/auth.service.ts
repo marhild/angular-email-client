@@ -13,6 +13,11 @@ export interface SignupCredentials {
   passwordConfirmation: string;
 }
 
+interface SignedinResponse {
+  authenticated: boolean;
+  username: string;
+}
+
 interface SignupResponse {
   username: string;
 }
@@ -46,4 +51,16 @@ export class AuthService {
         })
       );
   }
+
+  // check if user is signed in
+  checkAuth() {
+    return this.http
+      .get<SignedinResponse>(`${this.rootUrl}/auth/signedin`)
+      .pipe(
+        tap(({authenticated}) => {
+          this.signedin$.next(authenticated);
+        })
+      );
+  }
+
 }
