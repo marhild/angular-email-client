@@ -20,8 +20,8 @@ input.right-align {
 -moz-appearance: textfield;
 }
 
-.signup-form-container-card{
-    width: 30%;
+.signup-card{
+    max-width: 400px;
     margin: auto;
     margin-top: 5rem;
 }
