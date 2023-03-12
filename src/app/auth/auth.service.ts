@@ -13,6 +13,11 @@ export interface SignupCredentials {
   passwordConfirmation: string;
 }
 
+export interface SigninCredentials {
+  username: string;
+  password: string;
+}
+
 interface SignedinResponse {
   authenticated: boolean;
   username: string;
@@ -69,6 +74,16 @@ export class AuthService {
       tap(() => {
         // signed out 
         this.signedin$.next(false);
+      })
+    )
+  }
+
+  signin(credentials: SigninCredentials) {
+    return this.http.post<any>(`${this.rootUrl}/auth/signin`, credentials)
+    .pipe(
+      // if error then will skip tap()
+      tap(() => {
+        this.signedin$.next(true);
       })
     )
   }

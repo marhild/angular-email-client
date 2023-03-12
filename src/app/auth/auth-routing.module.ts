@@ -6,10 +6,9 @@ import { SignoutComponent } from './signout/signout.component';
 
 const routes: Routes = [
   {path: 'signup', component: SignupComponent},
-  {path: 'signin', component: SigninComponent},
   {path: 'signout', component: SignoutComponent},
   {path: 'inbox', component: SignupComponent},
-  {path: '', component: SignupComponent},
+  {path: '', component: SigninComponent},
 ];
 
 @NgModule({
