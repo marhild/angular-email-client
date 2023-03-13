@@ -11,6 +11,7 @@ import { EmailShowComponent } from './email-show/email-show.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PlaceholderComponent } from './placeholder/placeholder.component';
     EmailIndexComponent,
     EmailShowComponent,
     PlaceholderComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,

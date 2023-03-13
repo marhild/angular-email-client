@@ -6,6 +6,8 @@ import { PlaceholderComponent } from './placeholder/placeholder.component';
 import { EmailShowComponent } from './email-show/email-show.component';
 import { EmailResolverService } from './email-resolver.service';
 
+import { NotFoundComponent } from './not-found/not-found.component';
+
 const routes: Routes = [
   {
     path: '', 
@@ -18,7 +20,14 @@ const routes: Routes = [
           email: EmailResolverService
         }
       },
-      {path: '', component: PlaceholderComponent}
+      {
+        path: '', 
+        component: PlaceholderComponent
+      },
+      {
+        path: 'not-found',
+        component: NotFoundComponent
+      }
     ]
   }
 ];

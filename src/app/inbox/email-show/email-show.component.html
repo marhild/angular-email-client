@@ -6,9 +6,7 @@
             <mat-card-subtitle>From: {{email.from}}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <p>
-              {{email.html}}
-            </p>
+            <p [innerHTML]="email.html"></p>
           </mat-card-content>
     </mat-card>
 
