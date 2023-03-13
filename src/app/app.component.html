@@ -4,12 +4,12 @@
     </a>
     <span class="fill-remaining-space"></span>
     <div *ngIf="signedin$ | async">
-        <button mat-button><a routerLink="/inbox">Inbox</a></button>
-        <button mat-button><a routerLink="/signout">SignOut</a></button>
+        <button  mat-button color="primary"><a routerLink="/inbox">Inbox</a></button>
+        <button  mat-button color="primary"><a routerLink="/signout">SignOut</a></button>
     </div>
     <div *ngIf="!(signedin$ | async)">
-        <button mat-button><a routerLink="/" routerLinkActiveOptions="{exact: true}">SignIn</a></button>
-        <button mat-button><a routerLink="/signup">SignUp</a></button>
+        <button  mat-button color="primary"><a routerLink="/" routerLinkActiveOptions="{exact: true}">SignIn</a></button>
+        <button  mat-button color="primary"><a routerLink="/signup">SignUp</a></button>
     </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
