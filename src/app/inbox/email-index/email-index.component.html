@@ -1,1 +1,12 @@
-<p>email-index works!</p>
+<div *ngFor="let email of emails" class ="email-card">
+    
+        <mat-card>
+            <a [routerLink]="email.id" routerLinkActive="active">
+            <mat-card-header>
+                <mat-card-title>{{email.subject}}</mat-card-title>
+                <mat-card-subtitle>{{email.from}}</mat-card-subtitle>
+            </mat-card-header>
+        </a>
+        </mat-card>
+    
+</div>
