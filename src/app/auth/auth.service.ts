@@ -33,7 +33,9 @@ interface SignupResponse {
 export class AuthService {
 
   rootUrl = 'https://api.angular-email.com';
-  signedin$ = new BehaviorSubject(false);
+  
+  // null: app does not yet know login status
+  signedin$ =  new BehaviorSubject<boolean | null>(null);
 
   constructor(private http: HttpClient) { }
 
