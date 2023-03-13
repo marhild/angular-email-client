@@ -12,9 +12,22 @@ export class EmailShowComponent implements OnInit{
 
   email: Email
 
-  constructor(private route: ActivatedRoute, private emailService: EmailService) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private emailService: EmailService
+    ) {
+      // fallback variable in case route is undefined
+      this.email = route.snapshot.data['email'];
+      
+      this.route.data.subscribe(({email}) => {
+        this.email = email;
+      })
+    }
 
   ngOnInit() {
+    /*
+    This works but has been replaced by an email resolver
+
     this.route.params.pipe(
       // cancels previous request 
       // if new request issues before previous finished
@@ -24,5 +37,6 @@ export class EmailShowComponent implements OnInit{
     ).subscribe((email) => {
       this.email = email;
     })
+    */
   }
 }
